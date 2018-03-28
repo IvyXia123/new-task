@@ -3,7 +3,7 @@
     <!--头部导航-->
     <div class="header">
       <div class="nameWrapper">
-        <img class="comLogo" :src="urlImg"/> {{urlImg}}
+        <img class="comLogo" src="./../assets/logo.png"/>
         <span class="comName">{{companyName}}</span>
       </div>
       <div class="headerNavWrapper">
@@ -16,21 +16,9 @@
       </div>
       <div class="basicInfoWrapper">
         <span class="time">2018-03-28 星期四 09:45:27</span>
-        <!--<img class="moreIcon" src="./../assets/home_preferences.png"/>-->
+        <img class="moreIcon" src="./../assets/home_preferences.png"/>
         <span class="moreChoice">首选项</span>
-        <!--<ul class="layui-nav layui-layout-right">-->
-          <!--<li class="layui-nav-item">-->
-            <!--<a href="javascript:;">-->
-              <!--<img src="http://t.cn/RCzsdCq" class="layui-nav-img">-->
-              <!--贤心-->
-            <!--</a>-->
-            <!--<dl class="layui-nav-child">-->
-              <!--<dd><a href="">基本资料</a></dd>-->
-              <!--<dd><a href="">安全设置</a></dd>-->
-            <!--</dl>-->
-          <!--</li>-->
-          <!--<li class="layui-nav-item"><a href="">退了</a></li>-->
-        <!--</ul>-->
+
       </div>
     </div>
     <!--导航-->
@@ -50,10 +38,20 @@
     name: "mainPage",
     data() {
       return {
-        companyName: '上海天正智能数据服务有限公司',
-        urlImg:""
-        // urlImg:require('./../assets/logo.png')
+        companyName: '上海天正智能数据服务有限公司'
       }
+    },
+    mounted() {
+
+      layui.use('laydate', function () {
+        console.log(layui)
+        var laydate = layui.laydate;
+
+//        执行一个laydate实例
+        laydate.render({
+          elem: '#test1' //指定元素
+        });
+      });
     }
   }
 </script>
@@ -67,8 +65,8 @@
     .header {
       position: relative;
       .w(100%);
-      .h(60px);
       min-width:1240px;
+      .h(60px);
       .p(10px 40px 10px 20px);
       overflow: hidden;
       box-sizing: border-box;
@@ -93,43 +91,43 @@
         .w(calc(~"100% - 660px"));
         .h(60px);
         .p(10px 6%);
-        top:0;
-        left:320px;
+        top: 0;
+        left: 320px;
         box-sizing: border-box;
         overflow: hidden;
-        .dataManage,.servicePaltform{
+        .dataManage, .servicePaltform {
           position: relative;
           .h(30px);
           .l-h(30px);
           .f-s(14px);
-          margin-top:3px;
-          color:#fefefe;
-          margin-right:25px;
+          margin-top: 3px;
+          color: #fefefe;
+          margin-right: 25px;
           .d-i(inline-block);
-          .line{
+          .line {
             position: absolute;
             .d-i(inline-block);
             .w(50%);
             .h(2px);
-            left:25%;
-            bottom:-2px;
+            left: 25%;
+            bottom: -2px;
             border-bottom: 2px solid #fff;
           }
         }
-        .searchBox{
-          float:right;
+        .searchBox {
+          float: right;
           .h(30px);
           .p(3px 10px);
           .l-h(24px);
-          margin-top:5px;
+          margin-top: 5px;
           box-sizing: border-box;
-          outline:none;
-          color:@whiteColor;
+          outline: none;
+          color: @whiteColor;
           border-radius: 15px;
           border: 1px solid @inputBorder;
           .b(@inputBg);
           &::-webkit-input-placeholder {
-            color:@whiteColor;
+            color: @whiteColor;
           }
         }
       }
@@ -139,14 +137,14 @@
         text-align: right;
         float: right;
         color: @whiteColor;
-        .time,.moreChoice {
+        .time, .moreChoice {
           .d-i(inline-block);
           .h(100%);
           .l-h(40px);
           .f-s(14px);
         }
         .time {
-          margin-right:15px;
+          margin-right: 15px;
         }
         .moreIcon {
           .w(15px);
@@ -155,29 +153,34 @@
         }
         .moreChoice {
         }
+
+        .layui-nav {
+          .d-i(inline-block);
+        }
       }
     }
-    .navText{
+    .navText {
       .h(40px);
       .p(5px 20px);
       .b(@bodyBg);
       .l-h(30px);
       .f-s(14px);
-      box-sizing:border-box;
+      box-sizing: border-box;
     }
-    .content{
+    .content {
       .w(100%);
       .h(calc(~"100% - 100px"));
       .p(0 20px 20px);
       /*.b(@bodyBg);*/
       .b(lightblue);
-      box-sizing:border-box;
+      box-sizing: border-box;
     }
 
+
     @media only screen and (min-width: 1400px) {
-      .header{
-        .headerNavWrapper{
-          .p(10px 14%);
+      .header {
+        .headerNavWrapper {
+          .p(10px 12%);
         }
       }
     }

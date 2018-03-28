@@ -25,6 +25,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.7",
+    "file-loader": "^1.1.11",
     "layui-src": "^2.2.5",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
